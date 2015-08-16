@@ -29,7 +29,7 @@ dependencies {
 
 def siteUrl = 'https://github.com/ayaseruri/TagsView'      // 项目的主页
 def gitUrl = 'https://github.com/ayaseruri/TagsView.git'   // Git仓库的url
-group = "andy.ayaseruri.lib"                                        // Maven Group ID for the artifact，一般填你唯一的包名
+group = "andy.ayaseruri.tagsview"                                        // Maven Group ID for the artifact，一般填你唯一的包名
 install {
     repositories.mavenInstaller {
         // This generates POM.xml with proper parameters
