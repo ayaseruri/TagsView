@@ -5,6 +5,21 @@ a lib which can creat tags easily
 
 [DemoApk](https://github.com/ayaseruri/TagsView/blob/master/demoapk_image/app-debug.apk?raw=true)
 
+# Maven
+```xml
+<groupId>andy.ayaseruri.tagsview</groupId>
+<artifactId>lib</artifactId>
+<version>1.0.0</version>
+```
+# Gradle
+```java
+dependencies {
+        //...
+        compile 'andy.ayaseruri.tagsview:lib:1.0.0@aar'
+        //...
+}
+```
+
 # Only 2 Steps:
 1. Define yout tags view in xml like:
 ```xml
