@@ -29,7 +29,8 @@
         app:textColor="#757575"
         app:textSize="13sp"
         app:tagsSpace="8dp"
-        app:tagsBg="@drawable/tags_bg"
+        app:tagsBg="@drawable/tag_bg"
+        app:lineSpace="5dp"
         app:maxlines="10"/>
 
 </RelativeLayout>

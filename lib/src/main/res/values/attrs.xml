@@ -13,5 +13,6 @@
         <attr name="rightMargin" format="dimension"/>
         <attr name="maxLength" format="dimension" />
         <attr name="maxlines" format="integer"/>
+        <attr name="lineSpace" format="dimension"/>
     </declare-styleable>
 </resources>

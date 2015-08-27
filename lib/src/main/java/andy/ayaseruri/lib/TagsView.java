@@ -24,7 +24,7 @@ public class TagsView extends LinearLayout {
 
     private int textPaddingLeft, textPaddingRight, textPaddingTop, textPaddingBottom, tagsSpace, textSize;
     private int leftMargin, rightMargin, maxLength, textColor;
-    private int tagsBg, maxLines;
+    private int tagsBg, maxLines, lineSpace;
 
     private Context mContext;
 
@@ -56,6 +56,8 @@ public class TagsView extends LinearLayout {
         WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
         wm.getDefaultDisplay().getMetrics(dm);
         maxLength = a.getDimensionPixelSize(R.styleable.TagsView_maxLength, dm.widthPixels);
+        lineSpace = a.getDimensionPixelSize(R.styleable.TagsView_lineSpace, 0);
+        a.recycle();
     }
 
     public void init(ArrayList<String> list, OnClickListener onClickListener){
@@ -110,6 +112,7 @@ public class TagsView extends LinearLayout {
         LayoutParams layoutParams = new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         layoutParams.leftMargin = leftMargin;
         layoutParams.rightMargin = rightMargin;
+        layoutParams.topMargin = lineSpace;
         linearLayout.setLayoutParams(layoutParams);
         return linearLayout;
     }

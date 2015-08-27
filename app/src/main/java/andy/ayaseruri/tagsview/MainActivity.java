@@ -31,7 +31,6 @@ public class MainActivity extends AppCompatActivity {
                     add("tags");
                     add("tags_withtagsview");
                     add("tags_withtagsview");
-                    ;
                 }}
                         , new View.OnClickListener() {
                     @Override
