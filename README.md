@@ -15,7 +15,7 @@ a lib which can creat tags easily
 ```java
 dependencies {
         //...
-        compile 'andy.ayaseruri.tagsview:lib:1.0.0@aar'
+        compile 'andy.ayaseruri.tagsview:lib:1.0.1@aar'
         //...
 }
 ```
