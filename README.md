@@ -9,13 +9,13 @@ a lib which can creat tags easily
 ```xml
 <groupId>andy.ayaseruri.tagsview</groupId>
 <artifactId>lib</artifactId>
-<version>1.0.1</version>
+<version>1.0.2</version>
 ```
 # Gradle
 ```java
 dependencies {
         //...
-        compile 'andy.ayaseruri.tagsview:lib:1.0.1@aar'
+        compile 'andy.ayaseruri.tagsview:lib:1.0.2@aar'
         //...
 }
 ```
@@ -42,5 +42,5 @@ dependencies {
 2.call init method like:
 ```java
 TagsView tagsView = (TagsView)findViewById(R.id.tags_view);
-tagsView.init(ArrayList<String>() arrayList, OnClickListener onClickListener);
+tagsView.init(ArrayList<String>() arrayList, ITagOnClick iTagOnClick(int postion));
 ```

@@ -10,6 +10,7 @@ import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
+import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.LinearLayout;
@@ -60,14 +61,15 @@ public class TagsView extends LinearLayout {
         a.recycle();
     }
 
-    public void init(ArrayList<String> list, OnClickListener onClickListener){
+    public void init(ArrayList<String> tagStrings, final ITagOnClick iTagOnClick){
         this.removeAllViews();
         float rowLength = leftMargin + rightMargin;
         LinearLayout row = creatLinearLayout();
         int line = 0;
 
-        for(String tagText : list){
-            TextView tag = new TextView(mContext);
+        int tagStringsSize = tagStrings.size();
+        for(int i=0; i< tagStringsSize; i++){
+            final TextView tag = new TextView(mContext);
             tag.setTextSize(TypedValue.COMPLEX_UNIT_PX, textSize);
             tag.setTextColor(textColor);
             tag.setMaxLines(1);
@@ -76,25 +78,31 @@ public class TagsView extends LinearLayout {
             tag.setMinimumHeight(0);
             tag.setIncludeFontPadding(false);
             tag.setPadding(textPaddingLeft, textPaddingTop, textPaddingRight, textPaddingBottom);
-            tag.setText(tagText);
+            tag.setText(tagStrings.get(i));
             tag.setBackgroundResource(tagsBg);
-            if(null != onClickListener){
+            tag.setTag(i);
+            if(null != iTagOnClick){
                 tag.setClickable(true);
-                tag.setOnClickListener(onClickListener);
+                tag.setOnClickListener(new OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        iTagOnClick.onClick((int)tag.getTag());
+                    }
+                });
             }
 
             LayoutParams btnParams = new LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
             btnParams.setMargins(0, 0, tagsSpace, 0);
             tag.setLayoutParams(btnParams);
 
-            rowLength = rowLength + tag.getPaint().measureText(tagText) + tagsSpace;
+            rowLength = rowLength + tag.getPaint().measureText(tagStrings.get(i)) + tagsSpace;
             if(rowLength < maxLength){
                 row.addView(tag);
             }else {
                 if(line < maxLines){
                     this.addView(row);
                     line++;
-                    rowLength = leftMargin + rightMargin + tag.getPaint().measureText(tagText) + tagsSpace;
+                    rowLength = leftMargin + rightMargin + tag.getPaint().measureText(tagStrings.get(i)) + tagsSpace;
                     row = creatLinearLayout();
                     row.addView(tag);
                 }else {
@@ -112,9 +120,13 @@ public class TagsView extends LinearLayout {
         LayoutParams layoutParams = new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         layoutParams.leftMargin = leftMargin;
         layoutParams.rightMargin = rightMargin;
-        layoutParams.topMargin = lineSpace;
+        layoutParams.bottomMargin = lineSpace;
         linearLayout.setLayoutParams(layoutParams);
         return linearLayout;
+    }
+
+    public interface ITagOnClick{
+        void onClick(int postion);
     }
 }
 

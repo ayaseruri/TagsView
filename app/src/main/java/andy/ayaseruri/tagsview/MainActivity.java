@@ -32,10 +32,10 @@ public class MainActivity extends AppCompatActivity {
                     add("tags_withtagsview");
                     add("tags_withtagsview");
                 }}
-                        , new View.OnClickListener() {
+                        , new TagsView.ITagOnClick() {
                     @Override
-                    public void onClick(View v) {
-                        Toast.makeText(MainActivity.this, "tags clicked", Toast.LENGTH_LONG).show();
+                    public void onClick(int postion) {
+                        Toast.makeText(MainActivity.this, "tags " + postion + " has been clicked.", Toast.LENGTH_SHORT).show();
                     }
                 });
             }
