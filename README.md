@@ -7,15 +7,15 @@ a lib which can creat tags easily
 
 # Maven
 ```xml
-<groupId>andy.ayaseruri.tagsview</groupId>
-<artifactId>lib</artifactId>
-<version>1.0.2</version>
+<groupId>andy.ayaseruri.tagsviewlib</groupId>
+<artifactId>tagsviewlib</artifactId>
+<version>1.0.3</version>
 ```
 # Gradle
 ```java
 dependencies {
         //...
-        compile 'andy.ayaseruri.tagsview:lib:1.0.2@aar'
+        compile 'andy.ayaseruri.tagsviewlib:tagsviewlib:1.0.3@aar'
         //...
 }
 ```

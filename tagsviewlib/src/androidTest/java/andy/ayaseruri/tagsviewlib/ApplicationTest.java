@@ -1,4 +1,4 @@
-package andy.ayaseruri.lib;
+package andy.ayaseruri.tagsviewlib;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

@@ -1,4 +1,4 @@
-package andy.ayaseruri.lib;
+package andy.ayaseruri.tagsviewlib;
 
 /**
  * Created by ayaseruri on 15/8/13.
@@ -106,7 +106,7 @@ public class TagsView extends LinearLayout {
                     row = creatLinearLayout();
                     row.addView(tag);
                 }else {
-                   return;
+                    return;
                 }
             }
         }

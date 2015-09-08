@@ -8,8 +8,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import java.util.ArrayList;
-
-import andy.ayaseruri.lib.TagsView;
+import andy.ayaseruri.tagsviewlib.TagsView;
 
 public class MainActivity extends AppCompatActivity {
 

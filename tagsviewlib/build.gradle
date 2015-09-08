@@ -2,17 +2,16 @@ apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
 
-version = "1.0.2"
+version = "1.0.3"
 android {
     compileSdkVersion 22
     buildToolsVersion "22.0.1"
-    resourcePrefix "ayaseruri_"
 
     defaultConfig {
         minSdkVersion 14
         targetSdkVersion 22
-        versionCode 2
-        versionName "1.0.1"
+        versionCode 1
+        versionName "1.0"
     }
     buildTypes {
         release {
@@ -23,13 +22,14 @@ android {
 }
 
 dependencies {
-    compile 'com.android.support:appcompat-v7:22.+'
     compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:appcompat-v7:22.2.1'
 }
 
 def siteUrl = 'https://github.com/ayaseruri/TagsView'      // 项目的主页
 def gitUrl = 'https://github.com/ayaseruri/TagsView.git'   // Git仓库的url
-group = "andy.ayaseruri.tagsview"                                        // Maven Group ID for the artifact，一般填你唯一的包名
+group = "andy.ayaseruri.tagsviewlib"                          // Maven Group ID for the artifact，一般填你唯一的包名
+
 install {
     repositories.mavenInstaller {
         // This generates POM.xml with proper parameters
@@ -37,7 +37,7 @@ install {
             project {
                 packaging 'aar'
                 // Add your description here
-                name 'a lib which can creat tags easily' 	//项目描述
+                name 'a lib which can creat tags easily ' 	//项目描述
                 url siteUrl
                 // Set your license
                 licenses {
@@ -86,7 +86,7 @@ bintray {
     configurations = ['archives']
     pkg {
         repo = "maven"
-        name = "TagsView"	//发布到JCenter上的项目名字
+        name = "TagsView"    //发布到JCenter上的项目名字
         websiteUrl = siteUrl
         vcsUrl = gitUrl
         licenses = ["Apache-2.0"]
