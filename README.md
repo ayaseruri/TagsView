@@ -23,7 +23,7 @@ dependencies {
 # Only 2 Steps:
 1. Define yout tags view in xml like:
 ```xml
-<andy.ayaseruri.lib.TagsView
+<andy.ayaseruri.tagsviewlib.TagsView
         android:id="@+id/tags_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
